@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\AccountData.cs" />
+    <Compile Include="Models\SignUp.cs" />
+    <Compile Include="Miscell.cs" />
     <Compile Include="Models\AccountInfo.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Program.cs" />

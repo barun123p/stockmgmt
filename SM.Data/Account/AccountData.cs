@@ -56,6 +56,30 @@ namespace SM.Data.Account
             return accountInfo;
 
         }
+        public void SignUp(SignUp signUp)
+        {
+            AccountInfo accountInfo = new AccountInfo();
+            SqlConnection conn = new SqlConnection(Utility.GetConnectionString());
+            SqlCommand sqlCommand = new SqlCommand("AddUserdetails", conn);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.Add("@userName", SqlDbType.VarChar, 50).Value = signUp.UserName;
+            sqlCommand.Parameters.Add("@UserPassword", SqlDbType.VarChar, 50).Value = signUp.Password;
+            sqlCommand.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = signUp.FirstName;
+            sqlCommand.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = signUp.LastName;
+            sqlCommand.Parameters.Add("@UserType", SqlDbType.Int).Value = signUp.UserType;
+            conn.Open();
+            sqlCommand.ExecuteNonQuery();
+          
+
+        }
+
+
+
+
+
+
+
+
     }
 }
 

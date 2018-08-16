@@ -23,6 +23,7 @@
                
             </table>
              <asp:Button ID="btnLogin" Text="Login" runat="server" OnClick="btnLogin_Click" />
+            <asp:Button ID="btnSingUp" runat="server" Text="SignUP" OnClick="btnSignUp_Click" />
         </div>
         <asp:Label ID="lblError" runat="server" BackColor="Red" Text=""></asp:Label>
     </form>

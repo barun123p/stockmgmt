@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using SM.Data.Account;
 using SM.Data.Models;
 
+
 namespace SM
 {
     public partial class Login : System.Web.UI.Page
@@ -25,12 +26,19 @@ namespace SM
             string userName = accountData.VlaidateUser(userLogin);
             if(userName=="")
             {
-                lblError.Text = "Invalid User!!!";
+                lblError.Text = "Plz enter valid UserName & Password or New User Plz SignUp!!!";
+
             }
             else
             {
                 Response.Redirect("~/Default.aspx");
             }
+        }
+
+        protected void btnSignUp_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SignUp.aspx");
+
         }
     }
 }
