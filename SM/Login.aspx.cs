@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SM.Data.Account;
@@ -27,10 +28,13 @@ namespace SM
             if(userName=="")
             {
                 lblError.Text = "Plz enter valid UserName & Password or New User Plz SignUp!!!";
+                Session["username"] = null;
 
             }
             else
             {
+                FormsAuthentication.SetAuthCookie(userName, true);
+                Session["username"] = userName;
                 Response.Redirect("~/Default.aspx");
             }
         }

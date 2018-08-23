@@ -18,6 +18,7 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
+                         <asp:RequiredFieldValidator ControlToValidate="txtPassword" ID="rfvPassowrd" runat="server" ErrorMessage="Password is required"></asp:RequiredFieldValidator>
                     </td>
 
 
